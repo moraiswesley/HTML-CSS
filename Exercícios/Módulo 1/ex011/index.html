@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente diminua o tamanho do seu navegador.</p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <!-- Código acima carrega a imagen grande, mas se o navegador for menor do que 1050px, ele irá carregar a imagem média. O source menor sempre deve estar ACIMA do maior. -->
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p>
+    <!-- <audio src="midia/on-the-rocks-tracktribe.mp3" controls autoplay></audio> -->
+    <!-- Código acima não funcionou o autoplay. Novo código ensinado abaixo: -->
+   
+    <audio preload="metadata" autoplay controls loop>
+        <!-- Parâmetros de áudio:
+            Auto - Carrega 100% do arquivo antes de disponibilizar;
+            Metadata - Carrega nome de arquivos e outras informações;
+            None - Não carrega nenhuma informação até que o usuário clique no controle.
+        
+        Obs.: Autoplay também não funcionou no Chrome.
+        -->
+        <source src="midia/on-the-rocks-tracktribe.mp3" type="audio/mpeg">
+        <p>Infelizmente seu navegador não consegue reproduzir o áudio. Clique <a href="midia/on-the-rocks-tracktribe.mp3">aqui</a> para baixar o arquivo mp3.</p>
+    </audio>
+    
+</body>
+</html>
